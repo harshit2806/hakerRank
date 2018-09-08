@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        sc.close();
+        StringBuilder sb = new StringBuilder(""); 
+ 
+       for(int i =0; i < s.length(); i++){
+           char symbol = s.charAt(i);
+           if(symbol > 64 &&  symbol<91 || symbol > 96 &&  symbol<123){
+               sb.append(symbol);
+           }
+           else{
+               sb.append(" ");
+               continue;
+           }
+       }
+       
+       StringBuilder output = new StringBuilder("");
+       int tokenCount = 0;
+       for(String x: sb.toString().split(" ")){
+           if( !x.isEmpty() ){
+             output.append(x+'\n');
+             tokenCount++;
+            }
+       }
+       System.out.println(tokenCount);
+       System.out.println(output);
+        
+    }
+}
